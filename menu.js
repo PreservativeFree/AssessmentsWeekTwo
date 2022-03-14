@@ -153,7 +153,8 @@ var foodArr = [
 */
 
 //CODE HERE
-
+const filteredFood = foodArr.filter(item => item.tags.includes('popular'));
+console.log(filteredFood)
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -205,6 +206,7 @@ const filterByProperty = (property, number, type) => { //price, 9.99, above
             return item[property] < number;
         }
     });
+    return filteredArr;
 }
 
 /*
