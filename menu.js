@@ -34,7 +34,7 @@
 let pizza = {
     name: "Supreme Pizza",
     price: 11.99,
-    category: "Mozzarella Sticks",
+    category: "Entree",
     popularity: 4.7,
     rating: 4.5,
     tags: ["glutenfree", "kidfriendly", "meat", "combo", "greatdeal"]
@@ -101,42 +101,42 @@ var foodArr = [
     {
         name: "Cheese Pizza",
         price: 8.99,
-        category: "Ceasar Salad",
+        category: "Entree",
         popularity: 5.0,
         rating: 4.9,
-        tags: ["glutenfree", "vegan", "greatdeal"]
+        tags: ["glutenfree", "vegan", "greatdeal", "popular"]
     },
     {
-        name: "Pepperoni Pizza",
-        price: 11.99,
-        category: "Mozzarella Sticks",
+        name: "Bone-in Wings",
+        price: 5.99,
+        category: "Appetizer",
         popularity: 4.9,
         rating: 4.5,
         tags: ["kidfriendly", "meat", "popular"]
     },
     {
-        name: "Sausage Pizza",
-        price: 10.99,
-        category: "Mozzarella Sticks",
+        name: "Chicken and Nachos",
+        price: 8.99,
+        category: "Appetizer",
         popularity: 4.7,
         rating: 4.5,
-        tags: ["glutenfree", "kidfriendly", "meat", "combo", "greatdeal"]
+        tags: ["kidfriendly", "meat", "combo", "greatdeal"]
     },
     {
         name: "Hawaiian Pizza",
         price: 10.99,
-        category: "Pineapple core",
+        category: "Entree",
         popularity: 4.7,
         rating: 4.4,
         tags: ["glutenfree", "kidfriendly", "vegan"]
     },
     {
-        name: "Supreme Pizza",
-        price: 11.99,
-        category: "Mozzarella Sticks",
+        name: "Cheesecake",
+        price: 3.99,
+        category: "Dessert",
         popularity: 4.7,
         rating: 4.5,
-        tags: ["glutenfree", "kidfriendly", "meat", "combo", "greatdeal"]
+        tags: ["kidfriendly", "popular", "fan-favorite"]
     }
   ]
 
@@ -153,15 +153,6 @@ var foodArr = [
 */
 
 //CODE HERE
-
-const filteredFood = () => foodArr.filter(function(elem) {
-    return elem.tags = "vegan";
-});
-
-filteredFood(foodArr, pizzaName => {
-    console.log("The pizza name with this tag is " + pizzaName)
-});
-
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -200,10 +191,21 @@ filteredFood(foodArr, pizzaName => {
         `number` passed in
     
     Return the filtered array from the entire function
+    property = Rating or Popularity or Price
+
+    type = above or below the string
 */
 
 //CODE HERE
-
+const filterByProperty = (property, number, type) => { //price, 9.99, above
+    let filteredArr = foodArr.filter(item => { 
+        if(type === "above") {
+            return item[property] > number; 
+        } else {
+            return item[property] < number;
+        }
+    });
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -213,3 +215,4 @@ filteredFood(foodArr, pizzaName => {
 */
 
 //CODE HERE
+console.log(filterByProperty("price", 9.99, "above")); 

@@ -22,13 +22,9 @@
 */
 
 //CODE HERE
-const greetUser = (username) => {
-    String(username);
-    username === "Andrew"?console.log("Welcome back, Andrew"):
-    console.log(`Welcome back, ${username}`)
-}
+const greetUser = username => `Welcome back, ${username}`;
 
-greetUser("Andrew");
+console.log(greetUser("Andrew"));
 
 //////////////////PROBLEM 2////////////////////
 /* 
